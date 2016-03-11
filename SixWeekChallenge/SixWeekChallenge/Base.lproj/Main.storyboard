@@ -14,21 +14,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" rowHeight="60" id="uPc-YA-rEN" customClass="UserTableViewCell" customModule="SixWeekChallenge" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" rowHeight="60" id="uPc-YA-rEN">
                                 <rect key="frame" x="0.0" y="92" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uPc-YA-rEN" id="hmw-k6-xpP">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="not_paired" translatesAutoresizingMaskIntoConstraints="NO" id="BsS-Iz-Goi">
-                                            <rect key="frame" x="542" y="5" width="50" height="50"/>
-                                        </imageView>
-                                    </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="pairedImage" destination="BsS-Iz-Goi" id="1nl-QH-MjI"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -72,7 +64,4 @@
             <point key="canvasLocation" x="629" y="371"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="not_paired" width="512" height="512"/>
-    </resources>
 </document>

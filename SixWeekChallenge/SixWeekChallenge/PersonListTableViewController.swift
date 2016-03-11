@@ -9,6 +9,10 @@
 import UIKit
 
 class PersonListTableViewController: UITableViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 
     
 
@@ -79,6 +83,9 @@ class PersonListTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
+            
+            let user = UserController.sharedController.userArray[indexPath.row]
+            
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
 

@@ -20,10 +20,20 @@ class UserController {
         loadFromPersistanceStorage()
     }
     
-    
+    /*
     //MARK: Pair users
-    func pairUsers(user: User) {
+    func pairUsers() {
+        let usersArray = userArray
+        let firstRandomIndex = Int(arc4random_uniform(UInt32(usersArray.count)))
+        let secondRandomIndex = Int(arc4random_uniform(UInt32(usersArray.count)))
+        
+        if (firstRandomIndex == secondRandomIndex) && (firstRandomIndex != secondRandomIndex) {
+            
+        }
     }
+    */
+
+
     
     
     func addUser(user: User) {
@@ -33,6 +43,7 @@ class UserController {
     
     func removeUser(indexPath: NSIndexPath) {
         userArray.removeAtIndex(indexPath.row)
+        saveToPersistantStorage()
     }
     
     func saveToPersistantStorage() {

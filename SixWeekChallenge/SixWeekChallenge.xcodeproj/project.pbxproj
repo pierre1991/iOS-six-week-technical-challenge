@@ -14,7 +14,6 @@
 		8F226FBD1C932AD900E19E4F /* PersonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F226FBC1C932AD900E19E4F /* PersonListTableViewController.swift */; };
 		8F226FBF1C932CB100E19E4F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F226FBE1C932CB100E19E4F /* User.swift */; };
 		8F226FC51C932F3300E19E4F /* UserControlelr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F226FC41C932F3300E19E4F /* UserControlelr.swift */; };
-		8FACD8F21C933E0F00E7A847 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FACD8F11C933E0F00E7A847 /* UserTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		8F226FBC1C932AD900E19E4F /* PersonListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonListTableViewController.swift; sourceTree = "<group>"; };
 		8F226FBE1C932CB100E19E4F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8F226FC41C932F3300E19E4F /* UserControlelr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserControlelr.swift; sourceTree = "<group>"; };
-		8FACD8F11C933E0F00E7A847 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +82,6 @@
 			children = (
 				8F226FBC1C932AD900E19E4F /* PersonListTableViewController.swift */,
 				8F226FC41C932F3300E19E4F /* UserControlelr.swift */,
-				8FACD8F11C933E0F00E7A847 /* UserTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -164,7 +161,6 @@
 				8F226FAB1C9326A100E19E4F /* AppDelegate.swift in Sources */,
 				8F226FC51C932F3300E19E4F /* UserControlelr.swift in Sources */,
 				8F226FBF1C932CB100E19E4F /* User.swift in Sources */,
-				8FACD8F21C933E0F00E7A847 /* UserTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
