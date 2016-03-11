@@ -20,21 +20,20 @@ class UserController {
         loadFromPersistanceStorage()
     }
     
-    /*
-    //MARK: Pair users
-    func pairUsers() {
-        let usersArray = userArray
-        let firstRandomIndex = Int(arc4random_uniform(UInt32(usersArray.count)))
-        let secondRandomIndex = Int(arc4random_uniform(UInt32(usersArray.count)))
+    
+    //MARK: Create Pairs
+    func createPairs() {
+        var firstRandomNumber = arc4random_uniform(UInt32(userArray.count))
+        var secondRandomNumber = arc4random_uniform(UInt32(userArray.count))
         
-        if (firstRandomIndex == secondRandomIndex) && (firstRandomIndex != secondRandomIndex) {
+        for user in userArray {
             
         }
+        
     }
-    */
-
-
     
+    
+
     
     func addUser(user: User) {
         userArray.append(user)
@@ -46,6 +45,8 @@ class UserController {
         saveToPersistantStorage()
     }
     
+    
+    //MARK: NSUserDefaults Functions
     func saveToPersistantStorage() {
         NSKeyedArchiver.archiveRootObject(self.userArray, toFile: self.filePath(kUsers))
     }

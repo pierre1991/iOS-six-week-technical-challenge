@@ -15,15 +15,18 @@ class PersonListTableViewController: UITableViewController {
     }
 
     
-
+    //MARK: Actions
     @IBAction func addButtonTapped(sender: AnyObject) {
         createAlertController()
     }
     
     @IBAction func pairButtonTapped(sender: AnyObject) {
+        
+        
     }
     
     
+    //MARK: New User Alert Controller
     func createAlertController() {
         let alertController = UIAlertController(title: "Add a person..", message: "", preferredStyle: .Alert)
         
@@ -55,7 +58,7 @@ class PersonListTableViewController: UITableViewController {
 
 
 
-    // MARK: - Table view data source
+    // MARK: Table View Data Source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return UserController.sharedController.userArray.count
     }
@@ -71,22 +74,16 @@ class PersonListTableViewController: UITableViewController {
     }
 
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
-
     
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            
-            let user = UserController.sharedController.userArray[indexPath.row]
-            
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            //TODO: Delete Row
         } else if editingStyle == .Insert {
 
         }
