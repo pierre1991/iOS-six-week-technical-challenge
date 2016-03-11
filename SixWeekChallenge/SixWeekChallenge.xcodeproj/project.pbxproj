@@ -312,6 +312,7 @@
 				8F226FBB1C9326A100E19E4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

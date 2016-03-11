@@ -20,5 +20,9 @@ class UserController {
         userArray.append(user)
     }
     
+    func removeUser(indexPath: NSIndexPath) {
+        userArray.removeAtIndex(indexPath.row)
+    }
+    
     
 }

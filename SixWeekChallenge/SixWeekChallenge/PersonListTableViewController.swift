@@ -10,9 +10,11 @@ import UIKit
 
 class PersonListTableViewController: UITableViewController {
 
+    
 
-    
-    
+    @IBAction func addButtonTapped(sender: AnyObject) {
+        createAlertController()
+    }
     
     func createAlertController() {
         let alertController = UIAlertController(title: "Add a person..", message: "", preferredStyle: .Alert)
@@ -27,6 +29,7 @@ class PersonListTableViewController: UITableViewController {
                         } else {
                             let person = User(name: name)
                             UserController.sharedController.addUser(person)
+                            self.tableView.reloadData()
                         }
             }
         }
@@ -41,31 +44,24 @@ class PersonListTableViewController: UITableViewController {
         presentViewController(alertController, animated: true, completion: nil)
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+
 
 
     // MARK: - Table view data source
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 0
-    }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return UserController.sharedController.userArray.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("personCell", forIndexPath: indexPath)
+        
+        let person = UserController.sharedController.userArray[indexPath.row]
+        
+        cell.textLabel?.text = person.name
+        
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -102,14 +98,5 @@ class PersonListTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
