@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		8F226FAB1C9326A100E19E4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F226FAA1C9326A100E19E4F /* AppDelegate.swift */; };
-		8F226FAD1C9326A100E19E4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F226FAC1C9326A100E19E4F /* ViewController.swift */; };
 		8F226FB01C9326A100E19E4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F226FAE1C9326A100E19E4F /* Main.storyboard */; };
 		8F226FB21C9326A100E19E4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F226FB11C9326A100E19E4F /* Assets.xcassets */; };
 		8F226FB51C9326A100E19E4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F226FB31C9326A100E19E4F /* LaunchScreen.storyboard */; };
+		8F226FBD1C932AD900E19E4F /* PersonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F226FBC1C932AD900E19E4F /* PersonListTableViewController.swift */; };
+		8F226FBF1C932CB100E19E4F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F226FBE1C932CB100E19E4F /* User.swift */; };
+		8F226FC51C932F3300E19E4F /* UserControlelr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F226FC41C932F3300E19E4F /* UserControlelr.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8F226FA71C9326A100E19E4F /* SixWeekChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixWeekChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F226FAA1C9326A100E19E4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8F226FAC1C9326A100E19E4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8F226FAA1C9326A100E19E4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SixWeekChallenge/AppDelegate.swift; sourceTree = "<group>"; };
 		8F226FAF1C9326A100E19E4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8F226FB11C9326A100E19E4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8F226FB11C9326A100E19E4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SixWeekChallenge/Assets.xcassets; sourceTree = "<group>"; };
 		8F226FB41C9326A100E19E4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8F226FB61C9326A100E19E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F226FB61C9326A100E19E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = SixWeekChallenge/Info.plist; sourceTree = "<group>"; };
+		8F226FBC1C932AD900E19E4F /* PersonListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonListTableViewController.swift; sourceTree = "<group>"; };
+		8F226FBE1C932CB100E19E4F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8F226FC41C932F3300E19E4F /* UserControlelr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserControlelr.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,11 @@
 		8F226F9E1C9326A000E19E4F = {
 			isa = PBXGroup;
 			children = (
+				8F226FAA1C9326A100E19E4F /* AppDelegate.swift */,
+				8F226FAE1C9326A100E19E4F /* Main.storyboard */,
+				8F226FB11C9326A100E19E4F /* Assets.xcassets */,
+				8F226FB31C9326A100E19E4F /* LaunchScreen.storyboard */,
+				8F226FB61C9326A100E19E4F /* Info.plist */,
 				8F226FA91C9326A100E19E4F /* SixWeekChallenge */,
 				8F226FA81C9326A100E19E4F /* Products */,
 			);
@@ -54,14 +63,27 @@
 		8F226FA91C9326A100E19E4F /* SixWeekChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				8F226FAA1C9326A100E19E4F /* AppDelegate.swift */,
-				8F226FAC1C9326A100E19E4F /* ViewController.swift */,
-				8F226FAE1C9326A100E19E4F /* Main.storyboard */,
-				8F226FB11C9326A100E19E4F /* Assets.xcassets */,
-				8F226FB31C9326A100E19E4F /* LaunchScreen.storyboard */,
-				8F226FB61C9326A100E19E4F /* Info.plist */,
+				8F226FC21C932EC600E19E4F /* Model */,
+				8F226FC31C932EEE00E19E4F /* Controller */,
 			);
 			path = SixWeekChallenge;
+			sourceTree = "<group>";
+		};
+		8F226FC21C932EC600E19E4F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8F226FBE1C932CB100E19E4F /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8F226FC31C932EEE00E19E4F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8F226FBC1C932AD900E19E4F /* PersonListTableViewController.swift */,
+				8F226FC41C932F3300E19E4F /* UserControlelr.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +157,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F226FAD1C9326A100E19E4F /* ViewController.swift in Sources */,
+				8F226FBD1C932AD900E19E4F /* PersonListTableViewController.swift in Sources */,
 				8F226FAB1C9326A100E19E4F /* AppDelegate.swift in Sources */,
+				8F226FC51C932F3300E19E4F /* UserControlelr.swift in Sources */,
+				8F226FBF1C932CB100E19E4F /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +173,7 @@
 				8F226FAF1C9326A100E19E4F /* Base */,
 			);
 			name = Main.storyboard;
+			path = SixWeekChallenge;
 			sourceTree = "<group>";
 		};
 		8F226FB31C9326A100E19E4F /* LaunchScreen.storyboard */ = {
@@ -157,6 +182,7 @@
 				8F226FB41C9326A100E19E4F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = SixWeekChallenge;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
