@@ -21,11 +21,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="incomplete" translatesAutoresizingMaskIntoConstraints="NO" id="BsS-Iz-Goi">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="not_paired" translatesAutoresizingMaskIntoConstraints="NO" id="BsS-Iz-Goi">
                                             <rect key="frame" x="542" y="5" width="50" height="50"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="pairedImage" destination="BsS-Iz-Goi" id="1nl-QH-MjI"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -70,6 +73,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="incomplete" width="512" height="512"/>
+        <image name="not_paired" width="512" height="512"/>
     </resources>
 </document>
