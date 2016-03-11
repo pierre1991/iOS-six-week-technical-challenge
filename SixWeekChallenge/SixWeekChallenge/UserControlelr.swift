@@ -16,12 +16,25 @@ class UserController {
     
     
     
+    func pairUsers(user: User) {
+        
+    }
+    
+    
     func addUser(user: User) {
         userArray.append(user)
     }
     
     func removeUser(indexPath: NSIndexPath) {
         userArray.removeAtIndex(indexPath.row)
+    }
+    
+    func saveToPersistantStorage() {
+        
+    }
+    
+    func loadFromPersistanceStorage() {
+        
     }
     
     

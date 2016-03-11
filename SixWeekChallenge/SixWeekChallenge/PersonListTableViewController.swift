@@ -16,6 +16,10 @@ class PersonListTableViewController: UITableViewController {
         createAlertController()
     }
     
+    @IBAction func pairButtonTapped(sender: AnyObject) {
+    }
+    
+    
     func createAlertController() {
         let alertController = UIAlertController(title: "Add a person..", message: "", preferredStyle: .Alert)
         
