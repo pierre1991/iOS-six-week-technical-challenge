@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import GameplayKit
+
 
 class UserController {
     
@@ -19,13 +21,7 @@ class UserController {
         userArray = []
         loadFromPersistanceStorage()
     }
-    
-    
-    //MARK: Create Pairs
-    func createPairs() {
-        //TODO: create a function to pick a pair of cells
-                
-    }
+
     
     //MARK: Funcitons
     func addUser(user: User) {
@@ -43,6 +39,7 @@ class UserController {
         userArray.insert(user, atIndex: indexPath.row)
         saveToPersistantStorage()
     }
+
     
     
     //MARK: NSUserDefaults Functions

@@ -19,12 +19,20 @@ class PersonListTableViewController: UITableViewController {
         tableView.reloadData()
     }
 
+    
+    
     //MARK: Actions
     @IBAction func addButtonTapped(sender: AnyObject) {
         createAlertController()
     }
     
     @IBAction func pairButtonTapped(sender: AnyObject) {
+        if (UserController.sharedController.userArray.count > 1) {
+            
+        } else {
+            return
+        }
+
     }
     
     @IBAction func randomiseButtonTapped(sender: AnyObject) {
@@ -36,8 +44,10 @@ class PersonListTableViewController: UITableViewController {
             return
         }
     }
+    
+    
 
-    //MARK: New User Alert Controller
+    //MARK: Create User Alert Controller
     func createAlertController() {
         let alertController = UIAlertController(title: "Add a person..", message: "", preferredStyle: .Alert)
         
@@ -96,6 +106,7 @@ class PersonListTableViewController: UITableViewController {
         presentViewController(alertController, animated: true, completion: nil)
     }
     
+    
     // MARK: Table View Data Source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return UserController.sharedController.userArray.count
@@ -121,6 +132,8 @@ class PersonListTableViewController: UITableViewController {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }
+    
+    
     
 
 
