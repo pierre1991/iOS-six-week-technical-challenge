@@ -28,9 +28,13 @@ class PersonListTableViewController: UITableViewController {
     }
     
     @IBAction func randomiseButtonTapped(sender: AnyObject) {
-        var userArray = UserController.sharedController.userArray
-        var randomArray = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(userArray)
-        print(randomArray)
+        if (UserController.sharedController.userArray.count > 1) {
+            let random = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(UserController.sharedController.userArray)
+            UserController.sharedController.userArray = random as! [User]
+            tableView.reloadData()
+        } else {
+            return
+        }
     }
 
     //MARK: New User Alert Controller
