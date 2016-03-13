@@ -7,25 +7,32 @@
 //
 
 import UIKit
+import GameplayKit
 
 class PersonListTableViewController: UITableViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    static let sharedController = PersonListTableViewController()
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+        tableView.reloadData()
     }
 
-    
     //MARK: Actions
     @IBAction func addButtonTapped(sender: AnyObject) {
         createAlertController()
     }
     
     @IBAction func pairButtonTapped(sender: AnyObject) {
-        
-        
     }
     
-    
+    @IBAction func randomiseButtonTapped(sender: AnyObject) {
+        var userArray = UserController.sharedController.userArray
+        var randomArray = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(userArray)
+        print(randomArray)
+    }
+
     //MARK: New User Alert Controller
     func createAlertController() {
         let alertController = UIAlertController(title: "Add a person..", message: "", preferredStyle: .Alert)
@@ -55,9 +62,36 @@ class PersonListTableViewController: UITableViewController {
         presentViewController(alertController, animated: true, completion: nil)
     }
     
-
-
-
+    //MARK: Edit User Alert Controller
+    func editAlertController() {
+        let alertController = UIAlertController(title: "Edit", message: "", preferredStyle: .Alert)
+        let cancelAction = UIAlertAction(title: "cancel", style: .Default, handler: nil)
+        
+        let saveAction = UIAlertAction(title: "save", style: .Default) { (action) in
+            if let  textField = alertController.textFields,
+                    name = textField[0].text {
+                if name.isEmpty {
+                    return
+                } else {
+                    let person = User(name: name)
+                    let selectedIndex = self.tableView.indexPathForSelectedRow
+                    UserController.sharedController.editUser(person, indexPath: selectedIndex!)
+                    
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(saveAction)
+        
+        alertController.addTextFieldWithConfigurationHandler { (nameField) -> Void in
+            nameField.placeholder = "name"
+        }
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
     // MARK: Table View Data Source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return UserController.sharedController.userArray.count
@@ -73,21 +107,18 @@ class PersonListTableViewController: UITableViewController {
         return cell
     }
 
-
-    
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        editAlertController()
     }
-    
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            //TODO: Delete Row
-        } else if editingStyle == .Insert {
 
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == .Delete) {
+            UserController.sharedController.userArray.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }
+    
+
 
 
 

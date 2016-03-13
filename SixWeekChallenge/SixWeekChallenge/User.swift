@@ -13,7 +13,6 @@ class User: NSObject, NSCoding {
     private let kName = "name"
     
     var name: String
-    var isPaired: Bool = false
     
     init(name: String) {
         self.name = name

@@ -23,18 +23,11 @@ class UserController {
     
     //MARK: Create Pairs
     func createPairs() {
-        var firstRandomNumber = arc4random_uniform(UInt32(userArray.count))
-        var secondRandomNumber = arc4random_uniform(UInt32(userArray.count))
-        
-        for user in userArray {
-            
-        }
-        
+        //TODO: create a function to pick a pair of cells
+                
     }
     
-    
-
-    
+    //MARK: Funcitons
     func addUser(user: User) {
         userArray.append(user)
         saveToPersistantStorage()
@@ -42,6 +35,12 @@ class UserController {
     
     func removeUser(indexPath: NSIndexPath) {
         userArray.removeAtIndex(indexPath.row)
+        saveToPersistantStorage()
+    }
+    
+    func editUser(user: User, indexPath: NSIndexPath) {
+        removeUser(indexPath)
+        userArray.insert(user, atIndex: indexPath.row)
         saveToPersistantStorage()
     }
     
