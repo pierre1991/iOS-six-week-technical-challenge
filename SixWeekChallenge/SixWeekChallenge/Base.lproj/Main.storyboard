@@ -30,11 +30,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="R5U-gC-rad">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="Pair" id="d7z-5r-UTm">
-                            <connections>
-                                <action selector="pairButtonTapped:" destination="7vh-39-Jo3" id="7dm-ZL-9LT"/>
-                            </connections>
-                        </barButtonItem>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mzl-tg-4cB">
                             <rect key="frame" x="180" y="7" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

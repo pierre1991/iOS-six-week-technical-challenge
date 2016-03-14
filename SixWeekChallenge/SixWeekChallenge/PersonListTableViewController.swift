@@ -25,28 +25,18 @@ class PersonListTableViewController: UITableViewController {
     @IBAction func addButtonTapped(sender: AnyObject) {
         createAlertController()
     }
-    
-    @IBAction func pairButtonTapped(sender: AnyObject) {
-        if (UserController.sharedController.userArray.count > 1) {
-            
-        } else {
-            return
-        }
 
-    }
-    
     @IBAction func randomiseButtonTapped(sender: AnyObject) {
         if (UserController.sharedController.userArray.count > 1) {
             let random = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(UserController.sharedController.userArray)
             UserController.sharedController.userArray = random as! [User]
             tableView.reloadData()
         } else {
-            return
+            notEnoughUsersAlertController()
         }
     }
     
     
-
     //MARK: Create User Alert Controller
     func createAlertController() {
         let alertController = UIAlertController(title: "Add a person..", message: "", preferredStyle: .Alert)
@@ -106,8 +96,18 @@ class PersonListTableViewController: UITableViewController {
         presentViewController(alertController, animated: true, completion: nil)
     }
     
+    //MARK: Not Enough Users Alert Controller
+    func notEnoughUsersAlertController() {
+        let alertController = UIAlertController(title: "Sorry", message: "Not enough users to make a pair", preferredStyle: .Alert)
+        
+        let okAction = UIAlertAction(title: "ok", style: .Default, handler: nil)
+        
+        alertController.addAction(okAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
     
-    // MARK: Table View Data Source
+    //MARK: Table View Data Source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return UserController.sharedController.userArray.count
     }
@@ -133,6 +133,16 @@ class PersonListTableViewController: UITableViewController {
         }
     }
     
+    //MARK: Depicting Pairs based on Colors
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (UserController.sharedController.userArray.count > 1) {
+            if (indexPath.row % 2 == 0) {
+                cell.backgroundColor = UIColor.blueColor()
+            } else {
+                cell.backgroundColor = UIColor.redColor()
+            }
+        }
+    }
     
     
 
